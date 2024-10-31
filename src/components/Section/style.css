@@ -1,0 +1,33 @@
+.title {
+    color: var(--cor-dark-gray-2);
+    font-size: 24px;
+}
+
+.titleAlign {
+    float: left;
+}
+
+link {
+    color: var(--cor-primary);
+    font-size: 18px;
+    float: right;
+}
+
+/*  */
+
+.section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-title {
+    color: darkgray;
+    font-size: 24px;
+  }
+  
+  .section-link {
+    color: blue;
+    font-size: 18px;
+    text-align: right;
+    margin-left: auto;
+  }

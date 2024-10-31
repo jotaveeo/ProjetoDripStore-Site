@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+.article{
+display: flex;
+flex-direction: column;
+}
+
+.containerImg{
+    
+    width: 292px;     
+    height: 280px;
+    /* padding: 16px; */
+   /* border: .125rem solid red; */
+   margin-bottom: 1rem;
+
+
+}
+
+.containerImg img{
+
+    width: inherit;
+    height: inherit;
+    position:absolute;
+    box-shadow: 1px 1px 15px 1px #00000021;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+ }
+
+.containerImg .off{
+
+    display: flex;
+    position: relative;
+    top: 16px;
+    color: #474747;
+    background-color: #e7ff86;
+    border-radius: 8px;
+    width: 6.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    left: 13px;
+
+}
+
+.sectionCard h4 {
+    /* padding: 0.5rem; */
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #474747;
+    margin-bottom: 0.3rem;
+    left: 0%;
+    
+}
+
+
+.sectionCard h5 {
+    color: #474747;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    word-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.priceCard{
+    display: flex;
+    gap: 1rem;
+
+   
+}
+
+    .preco{
+        /* margin-right: 16px; */
+        text-decoration:line-through;
+        font-family: "Inter", sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: #474747;
+      
+    }
+
+
+    .precoDesconto{
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        color: #000000;
+    }
+
+    .sectionCard p {
+        font-family: "Inter", sans-serif;
+    }
+   
+

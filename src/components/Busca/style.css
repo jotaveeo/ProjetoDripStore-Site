@@ -1,0 +1,25 @@
+
+.Pesquisa {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    width:559px;
+    height: 60px;
+    top: 34px;
+    left: 384px;
+
+}
+
+.transparente{
+    width: 100%;
+    padding-right: 40px;
+}
+
+.pesquisaIcons {
+    position: absolute;
+    right: 10px; /* Ajuste conforme necessário */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
