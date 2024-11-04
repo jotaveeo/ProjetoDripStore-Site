@@ -1,5 +1,6 @@
 import ProductListing from "../../components/ProductListing/App";
 import img from "../../assets/tenis.png"
+import FilterGroup from "../../components/FilterGroup/App";
 
 const Product = {
 
@@ -20,6 +21,7 @@ function HomePage() {
     <>
     
     <ProductListing product={Product} />
+    <FilterGroup/>
       
     </>
 

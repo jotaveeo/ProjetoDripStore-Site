@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.titulo{
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    color: #474747;
+}
+
+.filterGrupo hr{
+    margin-bottom: 20px;
+}
+    
+.filterGrupo {
+    width: 19.5rem;
+    border: 1px solid #ccc;
+    padding: 20px;
+   
+}
+
+.filterGrupo h3{
+    font-family: "Inter", sans-serif;
+    margin-bottom: 20px;
+    color: #474747;
+}
+
+.filterGrupo ul{
+    list-style: none;
+    font-family: "Inter", sans-serif;
+    color: #474747;
+}
+
+.filterGrupo li {
+    margin-right: 0.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    /* justify-content:center; */
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    color: #474747;
+}
+.filterGrupo input[type="checkbox"] {
+    
+    width: 22px;
+    height: 22px;
+    accent-color:#C92071;
+    margin-right: 5px;
+}
+    .radius li input[type="checkbox"]{
+        border-radius: 4rem;
+    }
+
+/* 
+.filterGrupo input[type="checkbox"] {
+    width: 20px; 
+    height: 20px;
+  }
+ */
+
+
+
+
+
+
+
+
+
+/* filtro-grupo {
+    margin-bottom: 20px;
+  }
+  
+  .filtro-grupo h3 {
+    margin-bottom: 10px;
+  }
+  
+  .filtro-grupo ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .filtro-grupo li {
+    margin-bottom: 5px;
+  } */
