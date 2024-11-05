@@ -35,13 +35,14 @@ export default function FilterGroup (){
                 <li> <input type="checkbox"/><label>Unisex</label></li>
               </ul>
             </div>
-            <dir className="filterEstado">
+            <div className="filterEstado">
             <h3>Estado</h3>
               <ul >
-                <li> <input  type="checkbox"/><label>Nova</label></li>
-                <li> <input type="checkbox"/><label>Usado</label></li>
+                <li> <input name="estado"  type="radio"/><label>Nova</label></li>
+                
+                <li> <input name="estado" type="radio"/><label>Usado</label></li>
               </ul>
-            </dir>
+            </div>
          </div>
         
         </>
