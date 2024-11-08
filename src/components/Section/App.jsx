@@ -1,11 +1,12 @@
 // import React from "react";
 import PropTypes from "prop-types";
+import ProductCard from "../ProductCard/App";
 import "./style.css";
 
 export default function Section({
   title = "Produtos em alta",
   link = { text: "Veja Mais →", href: "https://redirect.link" },
-}) {
+  children = { ProductCard }}) {
   return (
     <section className="section-container">
       <div className="section-header">
@@ -13,6 +14,9 @@ export default function Section({
         <a href={link.href} className="section-link">
           {link.text}
         </a>
+      </div>
+      <div>
+        <ProductCard />
       </div>
     </section>
   );

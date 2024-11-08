@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const ProductCard = () => {
+function ProductCard() {
   return (
     <div className="product-details">
       <h2 className="product-title">
@@ -64,6 +64,6 @@ const ProductCard = () => {
       <button className="buy-button">COMPRAR</button>
     </div>
   );
-};
+}
 
 export default ProductCard;
