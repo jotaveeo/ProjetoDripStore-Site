@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import PropTypes from "prop-types";
 import "./style.css";
 
 export default function Section({
@@ -16,3 +17,12 @@ export default function Section({
     </section>
   );
 }
+
+Section.propTypes = {
+  title: PropTypes.string,
+  link: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+  }),
+};
+

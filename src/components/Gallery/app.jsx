@@ -240,54 +240,56 @@ import imgE from "../../assets/home-images/home-slide-5.jpeg";
 import imgF from "../../assets/home-images/home-slide-6.jpeg";
 import imgG from "../../assets/home-images/home-slide-7.jpeg";
 import imgH from "../../assets/home-images/home-slide-8.jpeg";
-import setaEsquerda from "../../assets/svgs/arrow-left.svg";
-import setaDireita from "../../assets/svgs/arrow-right.svg";
 import cardImg1 from "../../assets/collection-images/collection-1.png";
 import cardImg2 from "../../assets/collection-images/collection-2.png";
 import cardImg3 from "../../assets/collection-images/collection-3.png";
 
-import "./style.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Keyboard, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/bundle';
+import './style.css';
 
 const imagensCarrosel = [fundo, imgA, imgB, imgC, imgD, imgE, imgF, imgG, imgH];
 
 export default function Gallery({ radius = "4px" }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === imagensCarrosel.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? imagensCarrosel.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <>
       <div className="gallery" style={{ width: "100%", height: "100%" }}>
-        <button onClick={handlePrev} className="gallery-button">
-          <img src={setaEsquerda} alt="Anterior" />
-        </button>
+        {/* Swiper para o carrossel */}
+        <Swiper
+          slidesPerView={1} // Número de imagens visíveis por vez
+          spaceBetween={10} // Espaço entre as imagens
+          pagination={{ clickable: true }} // Habilita a navegação por pontos
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }} // Navegação com botões
+          keyboard={{ enabled: true }} // Ativa navegação por teclado
+          autoplay={{ delay: 3000 }} // Habilita autoplay com 3 segundos de delay
+          modules={[Pagination, Keyboard, Autoplay]} // Importando os módulos necessários
+        >
+          {imagensCarrosel.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                alt={`Slide ${index + 1}`}
+                style={{ borderRadius: radius, width: "100%", height: "100%" }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        <img
-          src={imagensCarrosel[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-          style={{ borderRadius: radius, width: "100%", height: "100%" }}
-        />
-
-        <button onClick={handleNext} className="gallery-button">
-          <img src={setaDireita} alt="Próximo" />
-        </button>
+        {/* Botões de navegação (opcional caso queira customizar a navegação) */}
+        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
 
         <div className="dots">
           {imagensCarrosel.map((_, index) => (
             <span
               key={index}
-              className={`dot ${currentIndex === index ? "active" : ""}`}
-              onClick={() => setCurrentIndex(index)}
+              className={`dot ${index === 0 ? "active" : ""}`}
             ></span>
           ))}
         </div>
@@ -327,7 +329,6 @@ export default function Gallery({ radius = "4px" }) {
   );
 }
 
-
 Gallery.propTypes = {
-  radius: PropTypes.string, // Valida que radius é uma string
+  radius: PropTypes.string,
 };
