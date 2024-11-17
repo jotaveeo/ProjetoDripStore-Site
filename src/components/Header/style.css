@@ -1,0 +1,90 @@
+/* header {
+  margin-top: 40px;
+}
+
+header nav {
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-left: 3.45%;
+  margin-bottom: 30px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: var(--cor-dark-gray-2);
+}
+
+.nav ul li a.active {
+  color: #d2006a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  color: var(--cor-primary);
+} */
+
+/* VERSÃO 2 */
+
+/* src/components/Header/style.css */
+
+header {
+  margin-top: 40px;
+}
+
+header nav {
+  display: flex; /* Garante que o conteúdo do nav seja flexível */
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-left: 3.45%;
+  margin-bottom: 30px;
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove qualquer margem que possa existir */
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: var(--cor-dark-gray-2);
+  font-weight: 500;
+}
+
+.nav ul li a.active {
+  color: var(--cor-primary);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  color: var(--cor-primary);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  header nav {
+    margin-top: 40px;
+    margin-left: 5%; /* Ajuste a margem para telas pequenas */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Alinha os links verticalmente em telas menores */
+    gap: 20px; /* Menor distância entre os links */
+  }
+
+  .nav ul li a {
+    font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+  }
+}

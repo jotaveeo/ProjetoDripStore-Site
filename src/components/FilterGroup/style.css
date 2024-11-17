@@ -1,0 +1,51 @@
+.titulo {
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  color: #474747;
+}
+
+.filterGrupo {
+  width: 19.5rem;
+  border: 1px solid #ccc;
+  padding: 20px;
+  
+  border: solid 1px yellow; /* TESTE */
+}
+
+.filterGrupo hr {
+  margin-bottom: 20px;
+}
+
+.filterGrupo h3 {
+  font-family: "Inter", sans-serif;
+  margin-bottom: 20px;
+  color: #474747;
+}
+
+.filterGrupo ul {
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  color: #474747;
+}
+
+.filterGrupo li {
+  margin-right: 0.5rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  color: #474747;
+}
+
+.filterGrupo input[type="checkbox"],
+.filterGrupo input[type="radio"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #c92071;
+  margin-right: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}

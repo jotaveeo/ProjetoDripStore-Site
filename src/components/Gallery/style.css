@@ -1,0 +1,286 @@
+/* CODIGO DO COMPONENTE - APENAS SLIDE */
+
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gallery img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.gallery-button:first-of-type {
+  left: 10px;
+}
+
+.gallery-button:last-of-type {
+  right: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  cursor: pointer;
+  margin: 0 5px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.thumbnail:hover,
+.thumbnail[style*="2px solid"] {
+  opacity: 1;
+} */
+
+/* CODIGO DO COMPONENTE SLIDE COM BOLINHAS */
+
+/* .gallery {
+  position: relative;
+}
+
+.gallery-button {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.gallery-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gallery-button:first-of-type {
+  left: 10px;
+}
+
+.gallery-button:last-of-type {
+  right: 10px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: var(--cor-primary);
+} */
+
+/* CODIGO DO COMPONENTE DO SLIDE COM thumbnail */
+
+/* .gallery {
+  position: relative;
+}
+
+.gallery-button {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.gallery-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gallery-button:first-of-type {
+  left: 10px;
+}
+
+.gallery-button:last-of-type {
+  right: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.thumbnail.active {
+  border-color: #007bff; 
+} */
+
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.gallery-button:first-of-type {
+  left: 10px;
+}
+
+.gallery-button:last-of-type {
+  right: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ff007f;
+}
+
+/* Cards de destaque */
+.cards-destaque {
+  /* text-align: center; */
+  /* padding: 20px; */
+  margin-left: 3.45%;
+  margin-right: 3.45%;
+}
+
+.cards-destaque h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  /* text-align: center; */
+  color: var(--cor-dark-gray-2);
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  padding: 20px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+  position: relative;
+}
+
+.card-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #d1ff00;
+  color: #000;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.card button {
+  background-color: var(--cor-white);
+  color: var(--cor-primary);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* COLEÇÃO DESTAQUE 2 */
+
+/* .card2 {
+
+}
+
+.card-tech2 {
+
+} */
+
+.cards-destaque2 {
+  /* text-align: center; */
+  /* padding: 20px; */
+  margin-left: 3.45%;
+}
+
+.cards-destaque2 h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: var(--cor-dark-gray-2);
+}
+
+.cards-container2 {
+  display: flex;
+  gap: 20px;
+}

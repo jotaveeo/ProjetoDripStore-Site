@@ -1,0 +1,13 @@
+.product-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: border 0.3s;
+}
