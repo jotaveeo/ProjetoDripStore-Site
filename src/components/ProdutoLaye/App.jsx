@@ -1,4 +1,4 @@
-import Laye from "../../assets/svgs/Laye.svg";
+import Laye from "../../assets/svgs/laye.svg";
 import "./style.css";
 
 export default function ProdutoLaye() {
