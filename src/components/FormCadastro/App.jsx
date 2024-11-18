@@ -99,7 +99,7 @@ export default function Cadastro() {
             />
 
             <h2>Informações de Entrega</h2>
-            
+
             <hr />
             <Input
               htmlFor="endereco"
