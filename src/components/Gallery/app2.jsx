@@ -1,5 +1,3 @@
-// CODIGO DO COMPONENTE - SLIDE COM BOLINHAS E THUMBNAILS
-
 import React, { useState } from "react";
 
 import imgA from "../../assets/home-images/home-slide-1.jpeg";
@@ -9,12 +7,11 @@ import imgC from "../../assets/home-images/home-slide-3.jpeg";
 import setaEsquerda from "../../assets/svgs/arrow-left.svg";
 import setaDireita from "../../assets/svgs/arrow-right.svg";
 
-
 import "./style2.css";
 
 const imagensCarrosel = [imgA, imgB, imgC];
 
-export default function Gallery() {
+export default function Gallery2() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {

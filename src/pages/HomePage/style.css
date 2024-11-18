@@ -33,7 +33,7 @@ body {
   --cor-white: #ffffff;
 }
 
-.collections {
+/* .collections {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -43,4 +43,4 @@ body {
   width: 292px;
   height: auto;
   border-radius: 4px;
-}
+} */

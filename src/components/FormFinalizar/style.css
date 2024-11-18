@@ -1,8 +1,26 @@
+:root {
+  /* Escala de cores coloridas */
+  --cor-primary: #c92071;
+  --cor-secondary: #b5b6f2;
+  --cor-tertiary: #991956;
+  --cor-error: #ee4266;
+  --cor-sucess: #52ca76;
+  --cor-warning: #f6aa1c;
+  --cor-warning-dark: #cb8c18;
+  /* Escala de cinza */
+  --cor-dark-gray: #1f1f1f;
+  --cor-dark-gray-2: #474747;
+  --cor-dark-gray-3: #666666;
+  --cor-light-gray: #8f8f8f;
+  --cor-light-gray-2: #cccccc;
+  --cor-light-gray-3: #f5f5f5;
+  --cor-white: #ffffff;
+}
+
 .top-finalizar {
   margin-bottom: 80px;
   margin-top: 40px;
 }
-
 
 .margin-finalizar {
   margin: 0 auto;
@@ -16,7 +34,7 @@
 }
 
 .form-content {
-  background-color: #fff;
+  background-color: var(--cor-white);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -45,7 +63,7 @@
 
 .button-finalizar button {
   background-color: var(--cor-warning);
-  color: #fff;
+  color: var(--cor-white);
   border: none;
   padding: 10px 20px;
   border-radius: 4px;

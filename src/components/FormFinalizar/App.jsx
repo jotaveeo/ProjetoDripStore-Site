@@ -9,7 +9,7 @@ export default function FormFinalizar() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Lógica para finalizar a compra
-    navigate("/comprafinalizada"); // Redireciona para a página inicial ou página de confirmação
+    navigate("/comprafinalizada"); // Redireciona para a página de compra finalizada
   };
 
   return (

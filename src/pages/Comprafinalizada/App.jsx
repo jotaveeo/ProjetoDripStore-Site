@@ -1,6 +1,7 @@
 import img from "../../assets/tenis.png";
 import React from "react";
 import CompraConcluida from "../../components/CompraConcluida/App";
+import Layout from "../../components/Layout/App";
 
 export default function Comprafinalizada() {
   const personalInfo = {
@@ -32,12 +33,14 @@ export default function Comprafinalizada() {
 
   return (
     <div>
-      <CompraConcluida
-        personalInfo={personalInfo}
-        deliveryInfo={deliveryInfo}
-        paymentInfo={paymentInfo}
-        purchaseSummary={purchaseSummary}
-      />
+      <Layout>
+        <CompraConcluida
+          personalInfo={personalInfo}
+          deliveryInfo={deliveryInfo}
+          paymentInfo={paymentInfo}
+          purchaseSummary={purchaseSummary}
+        />
+      </Layout>
     </div>
   );
 }

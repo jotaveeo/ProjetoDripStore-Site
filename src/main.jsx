@@ -52,21 +52,34 @@ import Comprafinalizada from "./pages/Comprafinalizada/App.jsx";
 import Criarconta from "./pages/Criarconta/App.jsx";
 import Finalizarcompra from "./pages/Finalizarcompra/App.jsx";
 import Meuspedidos from "./pages/Meuspedidos/App.jsx";
+import MinhasInfo from "./pages/MinhasInformacoesPage/App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         <Route path="/produtos" element={<ProductListingPage />} />
-        <Route path="/produto/detalhes" element={<ProductViewPage />} />
+
+        <Route path="/produtos/detalhes" element={<ProductViewPage />} />
+
         <Route path="/acessarconta" element={<Acessarconta/>} />
+
         <Route path="/cadastro" element={<Cadastro/>} />
+
         <Route path="/carrinho" element={<Carrinhopage />} />
+
         <Route path="/comprafinalizada" element={<Comprafinalizada />} />
-        <Route path="/criarconta" element={<Criarconta />} />
+
+        <Route path="/criarconta" element={<Cadastro/>} />
+
         <Route path="/finalizarcompra" element={<Finalizarcompra />} />
+
         <Route path="/meuspedidos" element={<Meuspedidos />} />
+
+        <Route path="/minhasinformacoes" element={<MinhasInfo />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

@@ -4,8 +4,8 @@ import "./style.css";
 export default function Section({
   title = "Produtos em alta",
   titleAlign = "left",
-  link = { text: "Veja Mais →", href: "/products" },
-  children
+  link = { text: "Veja Mais →", href: "/produtos" },
+  children,
 }) {
   return (
     <section className="section-container">
@@ -21,4 +21,3 @@ export default function Section({
     </section>
   );
 }
-//               <NavLink to="/pedidos" activeClassName="active">

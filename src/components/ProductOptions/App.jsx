@@ -45,7 +45,7 @@ export default function ProductOptions({ options, radius, shape, type }) {
 
   return (
     <>
-    <p className="tamanhop">Tamanho</p>
+      <p className="tamanhop">Tamanho</p>
       <div className="product-options">
         {options.map((option, index) => (
           <div

@@ -3,13 +3,13 @@ import "./style.css";
 
 export default function ProdutoLaye() {
   return (
-    <article className="ProdutoLaye">
+    <article className="produto-laye">
       <div className="oferta">
         <img src={Laye} alt="tenis" />
       </div>
 
-      <div>
-        <table id="laye">
+      <div className="informacoes">
+        <table className="laye-table">
           <thead>
             <tr>
               <th colSpan="2">

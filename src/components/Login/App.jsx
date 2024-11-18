@@ -8,11 +8,11 @@ export default function Login() {
         <h2>Acesse sua conta</h2>
         <p>Novo cliente? Então registre-se <a href="/register">aqui</a>.</p>
         <form>
-          <label>Login *</label>
-          <input type="text" placeholder="Insira seu login ou email" required />
+          <label htmlFor="login">Login *</label>
+          <input id="login" type="text" placeholder="Insira seu login ou email" required />
 
-          <label>Senha *</label>
-          <input type="password" placeholder="Insira sua senha" required />
+          <label htmlFor="password">Senha *</label>
+          <input id="password" type="password" placeholder="Insira sua senha" required />
 
           <a href="/forgot-password" className="forgot-password">Esqueci minha senha</a>
 

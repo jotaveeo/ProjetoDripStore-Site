@@ -21,15 +21,15 @@ export default function Colecao() {
         <div className="cards-container">
           <div className="card" style={{ backgroundImage: `url(${cardImg1})` }}>
             <div className="card-tag">30% OFF</div>
-            <button>Comprar</button>
+            <button className="card-button">Comprar</button>
           </div>
           <div className="card" style={{ backgroundImage: `url(${cardImg2})` }}>
             <div className="card-tag">30% OFF</div>
-            <button>Comprar</button>
+            <button className="card-button">Comprar</button>
           </div>
           <div className="card" style={{ backgroundImage: `url(${cardImg3})` }}>
             <div className="card-tag">30% OFF</div>
-            <button>Comprar</button>
+            <button className="card-button">Comprar</button>
           </div>
         </div>
       </div>

@@ -9,21 +9,21 @@ export default function ProductCard({
   precoDesconto,
 }) {
   return (
-    <article className="article">
-      <figure className="containerImg">
-        <img src={img} alt={nomeProduto} />
+    <article className="product-card">
+      <figure className="product-card-img-container">
+        <img src={img} alt={nomeProduto} className="product-card-img" />
         {descontooff && (
-          <div className="off">
+          <div className="product-card-off">
             <p>{descontooff}</p>
           </div>
         )}
       </figure>
-      <section className="sectionCard">
+      <section className="product-card-details">
         <h4>{title}</h4>
         <h5>{nomeProduto}</h5>
-        <div className="priceCard">
-          <p className={`preco ${precoDesconto ? "desconto" : ""}`}>{preco}</p>
-          {precoDesconto && <p className="precoDesconto">{precoDesconto}</p>}
+        <div className="product-card-price">
+          <p className={`product-card-preco ${precoDesconto ? "desconto" : ""}`}>{preco}</p>
+          {precoDesconto && <p className="product-card-preco-desconto">{precoDesconto}</p>}
         </div>
       </section>
     </article>

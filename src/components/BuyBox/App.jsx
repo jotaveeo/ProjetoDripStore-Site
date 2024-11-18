@@ -67,35 +67,35 @@ export default function BuyBox({
   };
 
   return (
-    <div className="product-details">
-      <h2 className="product-title">{name}</h2>
-      <p className="product-category">{reference}</p>
+    <div className="buybox-product-details">
+      <h2 className="buybox-product-title">{name}</h2>
+      <p className="buybox-product-category">{reference}</p>
 
-      <div className="rating">
-        <span className="stars">
+      <div className="buybox-rating">
+        <span className="buybox-stars">
           {renderStars(selectedStars)}{" "}
-          <img src={StarWhite} alt="star" className="star-icon" />
+          <img src={StarWhite} alt="star" className="buybox-star-icon" />
         </span>
-        <span className="rating-value">{selectedStars}</span>
-        <span className="review-count">({rating} avaliações)</span>
+        <span className="buybox-rating-value">{selectedStars}</span>
+        <span className="buybox-review-count">({rating} avaliações)</span>
       </div>
 
-      <div className="price">
+      <div className="buybox-price">
         {priceDiscount ? (
           <>
-            <span className="current-price">{priceDiscount}</span>
-            <span className="original-price">{price}</span>
+            <span className="buybox-current-price">{priceDiscount}</span>
+            <span className="buybox-original-price">{price}</span>
           </>
         ) : (
-          <span className="current-price">{price}</span>
+          <span className="buybox-current-price">{price}</span>
         )}
       </div>
       <p>Descrição do produto</p>
-      <p className="product-description">{description}</p>
+      <p className="buybox-product-description">{description}</p>
 
       {children}
 
-      <button className="buy-button" onClick={handleBuyClick}>
+      <button className="buybox-buy-button" onClick={handleBuyClick}>
         COMPRAR
       </button>
     </div>

@@ -1,8 +1,8 @@
-
 import Facebook from "../../assets/svgs/facebook-circle.svg";
 import Gmail from "../../assets/svgs/gmail.svg";
 import ImgCad from "../../assets/svgs/imgcad.svg";
 import Footer from "../../components/Footer/App";
+
 import "./style.css";
 
 export default function Acessarconta() {
@@ -34,7 +34,7 @@ export default function Acessarconta() {
             <a href="/forgot-password" className="forgot-password">
               Esqueci minha senha
             </a>
-            <button>Acessar a Conta</button>
+            <button type="submit">Acessar a Conta</button>
             <div className="login-rede-sociais">
               <span>Ou faça login com</span>
               <img

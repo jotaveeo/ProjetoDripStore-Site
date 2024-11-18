@@ -1,16 +1,35 @@
+:root {
+  /* Escala de cores coloridas */
+  --cor-primary: #c92071;
+  --cor-secondary: #b5b6f2;
+  --cor-tertiary: #991956;
+  --cor-error: #ee4266;
+  --cor-sucess: #52ca76;
+  --cor-warning: #f6aa1c;
+  --cor-warning-dark: #cb8c18;
+  /* Escala de cinza */
+  --cor-dark-gray: #1f1f1f;
+  --cor-dark-gray-2: #474747;
+  --cor-dark-gray-3: #666666;
+  --cor-light-gray: #8f8f8f;
+  --cor-light-gray-2: #cccccc;
+  --cor-light-gray-3: #f5f5f5;
+  --cor-white: #ffffff;
+}
+
 /* Container Principal */
 .compra-concluida-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: var(--cor-light-gray-3);
   padding: 20px;
 }
 
 /* Cartão de Confirmação */
 .compra-concluida-card {
-  background-color: #e0f7fa; /* Cor única para o card principal */
+  background-color: var(--cor-light-gray-2); /* Cor única para o card principal */
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -22,7 +41,7 @@
 /* Título Principal */
 .compra-concluida-title {
   text-align: center;
-  color: #00796b;
+  color: var(--cor-primary);
   margin-bottom: 20px;
 }
 
@@ -34,8 +53,8 @@
 .compra-concluida-section-title {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #004d40;
-  border-bottom: 1px solid #004d40;
+  color: var(--cor-dark-gray-2);
+  border-bottom: 1px solid var(--cor-dark-gray-2);
   padding-bottom: 5px;
 }
 
@@ -69,7 +88,7 @@
 .compra-concluida-button-link {
   background: none;
   border: none;
-  color: #00796b;
+  color: var(--cor-primary);
   text-decoration: underline;
   cursor: pointer;
   font-size: 16px;
@@ -77,8 +96,8 @@
 
 /* Botão Voltar para Home */
 .compra-concluida-home-button {
-  background-color: #ff9800;
-  color: #fff;
+  background-color: var(--cor-warning);
+  color: var(--cor-white);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -87,5 +106,5 @@
 }
 
 .compra-concluida-home-button:hover {
-  background-color: #e68900;
+  background-color: var(--cor-warning-dark);
 }

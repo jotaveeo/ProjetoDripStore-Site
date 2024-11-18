@@ -11,7 +11,7 @@ export default function Finalizarcompra() {
 
   return (
     <>
-      <Busca className="margin"/>
+      <Busca />
       <div className="finalizar-compra-container">
         <FormFinalizar />
         <ResumoCompra />

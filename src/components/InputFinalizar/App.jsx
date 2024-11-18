@@ -1,16 +1,12 @@
 import React from "react";
 import "./style.css";
 
-export default function InputFinalizar(props) {
+export default function InputFinalizar({ htmlFor, text, id, type, placeholder }) {
   return (
-    <div className="campo">
-      <form className="info">
-        <label htmlFor={props.htmlFor}>{props.text}</label>
-        <input
-          id={props.id}
-          type={props.type}
-          placeholder={props.placeholder}
-        />
+    <div className="input-finalizar-campo">
+      <form className="input-finalizar-info">
+        <label htmlFor={htmlFor}>{text}</label>
+        <input id={id} type={type} placeholder={placeholder} />
       </form>
     </div>
   );

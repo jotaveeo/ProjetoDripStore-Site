@@ -1,13 +1,26 @@
-footer {
-  background-color: var(--cor-dark-gray);
-  color: white;
+:root {
+  /* Escala de cores coloridas */
+  --cor-primary: #c92071;
+  --cor-secondary: #b5b6f2;
+  --cor-tertiary: #991956;
+  --cor-error: #ee4266;
+  --cor-sucess: #52ca76;
+  --cor-warning: #f6aa1c;
+  --cor-warning-dark: #cb8c18;
+  /* Escala de cinza */
+  --cor-dark-gray: #1f1f1f;
+  --cor-dark-gray-2: #474747;
+  --cor-dark-gray-3: #666666;
+  --cor-light-gray: #8f8f8f;
+  --cor-light-gray-2: #cccccc;
+  --cor-light-gray-3: #f5f5f5;
+  --cor-white: #ffffff;
 }
 
 .footer {
   background-color: var(--cor-dark-gray);
-  color: white;
-  padding: 70px;
-  padding-bottom: 20px;
+  color: var(--cor-white);
+  padding: 70px 20px 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -17,7 +30,7 @@ footer {
 .footer-categories,
 .footer-contact {
   flex: 1;
-  min-width: 200px; 
+  min-width: 200px;
   margin: 10px;
 }
 
@@ -26,10 +39,21 @@ footer {
   margin: 10px 0;
 }
 
-.redesLogo {
+.footer-social {
   display: flex;
   gap: 15px;
   padding-top: 10px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-categories h3,
+.footer-contact h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .footer-categories ul {
@@ -39,13 +63,13 @@ footer {
 }
 
 .footer-categories ul li {
-  color: #e0e0e0;
+  color: var(--cor-light-gray-2);
   font-size: 14px;
   margin: 20px 0;
 }
 
 .footer-categories ul li a {
-  color: white;
+  color: var(--cor-white);
   text-decoration: none;
 }
 
@@ -54,24 +78,20 @@ footer {
   margin: 20px 0;
 }
 
-.digcoll {
+.footer-bottom {
   text-align: center;
-  color: white;
+  color: var(--cor-white);
   width: 100%;
   margin-top: 20px;
 }
 
-.digcoll hr {
+.footer-bottom hr {
   border: 0;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--cor-white);
   margin: 20px 0;
 }
 
-.digcoll p {
+.footer-bottom p {
   font-size: 14px;
   margin: 0;
-}
-
-.footer-categories {
-  margin-left: 100px;
 }

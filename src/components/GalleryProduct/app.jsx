@@ -1,5 +1,3 @@
-// CODIGO DO COMPONENTE - SLIDE COM BOLINHAS E THUMBNAILS
-
 import React, { useState } from "react";
 
 import imgA from "../../assets/home-images/home-slide-1.jpeg";

@@ -19,7 +19,7 @@ export default function CartModal({ cartIcon }) {
 
   return (
     <div
-      className="cart-container"
+      className="cart-modal-container"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
