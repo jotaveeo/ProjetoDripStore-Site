@@ -1,21 +1,13 @@
-import { PrismaClient } from "@prisma/client";
+import express, { json } from "express";
+import route from "./route/route.js";
+import cors from "cors"
 
-const prisma = new PrismaClient();
+const app = express();
+const porta = 3000;
+app.use(express.json());
+app.use(cors());
 
-// const create = await prisma.user.create({
-//   data: {
-//     firstname: "joao",
-//     surname: "vitor",
-//     email: "joao@gmail.com",
-//     password: "1234",
-//   },
-// });
-// console.log(create);
-
-const read = await prisma.user.findUnique({
-  where: {
-    email: "levy@gmail.com",
-  },
-});
-
-console.log(read);
+app.use("/api", route);
+app.listen(porta, () => {
+  console.log(`Servidor rodando em http://localhost:${porta}`); 
+})
