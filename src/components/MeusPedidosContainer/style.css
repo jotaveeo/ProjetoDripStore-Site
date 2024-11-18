@@ -1,0 +1,21 @@
+.meus-pedidos-container {
+    width: 890px;
+    padding: 30px;
+    border-radius: 4px;
+    background-color: #f8eeee;
+}
+
+.meus-pedidos-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meus-pedidos-header-container > h1 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.meus-pedidos-header-container > span {
+    font-size: 14px;
+}

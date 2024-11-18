@@ -51,7 +51,7 @@ import Carrinho from "./pages/Carrinho/App.jsx";
 import Comprafinalizada from "./pages/Comprafinalizada/App.jsx";
 import Criarconta from "./pages/Criarconta/App.jsx";
 import Finalizarcompra from "./pages/Finalizarcompra/App.jsx";
-import Meuspedidos from "./pages/Meuspedidos/App.jsx";
+import MeusPedidosPage from "./pages/MeusPedidosPage/App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -66,7 +66,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/comprafinalizada" element={<Comprafinalizada />} />
         <Route path="/criarconta" element={<Criarconta />} />
         <Route path="/finalizarcompra" element={<Finalizarcompra />} />
-        <Route path="/meuspedidos" element={<Meuspedidos />} />
+        <Route path="/meuspedidospage" element={<MeusPedidosPage />} />
+        <Route path="/meuspedidos" element={<MeusPedidosPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

@@ -2,9 +2,9 @@ import ProductListing from "../../components/ProductListing/App";
 import Gallery from "../../components/Gallery/app";
 import Layout from "../../components/Layout/App";
 import Section from "../../components/Section/App";
-import "./style.css";
 import Colecao from "../../components/Colecao/app";
 import ProdutoLaye from "../../components/ProdutoLaye/App";
+import "./style.css";
 
 export default function HomePage() {
   return (

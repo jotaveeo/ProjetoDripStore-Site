@@ -34,7 +34,6 @@
 import { NavLink } from "react-router-dom";
 import Busca from "../Busca/index";
 import "./style.css";
-
 export default function Header() {
   return (
     <header>
