@@ -1,18 +1,21 @@
-import ProductListing from "../../components/ProductListing/App";
-import Gallery from "../../components/Gallery/app";
-import Layout from "../../components/Layout/App";
-import Section from "../../components/Section/App";
+import React, { useEffect } from "react";
+import ResumoCompra from "../../components/ResumoCompra/App";
+import FormFinalizar from "../../components/FormFinalizar/App";
 import "./style.css";
-
+import Busca from "../../components/Busca";
 
 export default function Finalizarcompra() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <Layout>
-        <Gallery></Gallery>
-        <Section/>
-        <ProductListing/>
-      </Layout>
+      <Busca />
+      <div className="finalizar-compra-container">
+        <FormFinalizar />
+        <ResumoCompra />
+      </div>
     </>
   );
 }

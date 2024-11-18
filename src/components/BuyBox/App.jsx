@@ -1,122 +1,101 @@
-// import React from "react";
-// import Gallery from "../Gallery/app2";
-// import "./style.css";
-
-// export default function BuyBox() {
-//   return (
-//     <div className="product-details">
-//       <h2 className="product-title">
-//         Tênis Nike Revolution 6 Next Nature Masculino
-//       </h2>
-//       <p className="product-category">Casual | Nike | REF:3846171</p>
-
-//       <div className="rating">
-//         <span className="stars">⭐⭐⭐⭐</span>
-//         <span className="rating-value">4.7</span>
-//         <span className="review-count">(90 avaliações)</span>
-//       </div>
-
-//       <div className="price">
-//         <span className="current-price">R$ 219,00</span>
-//         <span className="original-price">R$ 299,00</span>
-//       </div>
-
-//       <p className="product-description">
-//         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-//         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-//         veniam, quis nostrud exercitation ullamco.
-//       </p>
-
-//       <div className="size-selection">
-//         <h4>Tamanho</h4>
-//         <div className="size-options">
-//           {["39", "40", "41", "42", "43"].map((size) => (
-//             <button key={size} className="size-option">
-//               {size}
-//             </button>
-//           ))}
-//         </div>
-//       </div>
-
-//       <div className="color-selection">
-//         <h4>Cor</h4>
-//         <div className="color-options">
-//           {["#00c3ff", "#ff5c5c", "#555", "#8a57f2"].map((color, index) => (
-//             <span
-//               key={index}
-//               className="color-circle"
-//               style={{ backgroundColor: color }}
-//             ></span>
-//           ))}
-//         </div>
-//       </div>
-
-//       <button className="buy-button">COMPRAR</button>
-//     </div>
-//   );
-// }
-
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
+import StarActive from "../../assets/svgs/star-active.svg";
+import StarDesactive from "../../assets/svgs/star-desactive.svg";
+import StarWhite from "../../assets/svgs/star-white.svg";
 
 export default function BuyBox({
-  name = "Tênis Nike Revolution 6 Next Nature Masculino",
-  category = "Casual | Nike | REF:3846171",
-  stars = 4.7,
-  reviewCount = 90,
-  price = "R$ 219,00",
-  originalPrice = "R$ 299,00",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  sizeOptions = ["39", "40", "41", "42", "43"],
-  colorOptions = ["#00c3ff", "#ff5c5c", "#555", "#8a57f2"],
-  onBuyClick = () => alert("Produto comprado!"),
+  name,
+  reference,
+  stars,
+  rating,
+  price,
+  priceDiscount,
+  description,
+  children,
 }) {
+  const [selectedStars, setSelectedStars] = useState(stars);
+  const navigate = useNavigate();
+
+  const handleStarClick = (index) => {
+    setSelectedStars(index + 1);
+  };
+
+  const handleBuyClick = () => {
+    navigate("/carrinho");
+  };
+
+  const renderStars = (stars) => {
+    const totalStars = 5;
+    const filledStars = Math.floor(stars);
+    const halfStar = stars % 1 !== 0;
+    const emptyStars = totalStars - filledStars - (halfStar ? 1 : 0);
+
+    return (
+      <>
+        {[...Array(filledStars)].map((_, index) => (
+          <img
+            key={index}
+            src={StarActive}
+            alt="star"
+            className="star-icon"
+            onClick={() => handleStarClick(index)}
+          />
+        ))}
+        {halfStar && (
+          <img
+            src={StarDesactive}
+            alt="star"
+            className="star-icon"
+            onClick={() => handleStarClick(filledStars)}
+          />
+        )}
+        {[...Array(emptyStars)].map((_, index) => (
+          <img
+            key={index}
+            src={StarDesactive}
+            alt="star"
+            className="star-icon"
+            onClick={() =>
+              handleStarClick(filledStars + (halfStar ? 1 : 0) + index)
+            }
+          />
+        ))}
+      </>
+    );
+  };
+
   return (
-    <div className="product-details">
-      <h2 className="product-title">{name}</h2>
-      <p className="product-category">{category}</p>
+    <div className="buybox-product-details">
+      <h2 className="buybox-product-title">{name}</h2>
+      <p className="buybox-product-category">{reference}</p>
 
-      <div className="rating">
-        <span className="stars">⭐⭐⭐⭐</span>
-        <span className="rating-value">{stars}</span>
-        <span className="review-count">({reviewCount} avaliações)</span>
+      <div className="buybox-rating">
+        <span className="buybox-stars">
+          {renderStars(selectedStars)}{" "}
+          <img src={StarWhite} alt="star" className="buybox-star-icon" />
+        </span>
+        <span className="buybox-rating-value">{selectedStars}</span>
+        <span className="buybox-review-count">({rating} avaliações)</span>
       </div>
 
-      <div className="price">
-        <span className="current-price">{price}</span>
-        <span className="original-price">{originalPrice}</span>
+      <div className="buybox-price">
+        {priceDiscount ? (
+          <>
+            <span className="buybox-current-price">{priceDiscount}</span>
+            <span className="buybox-original-price">{price}</span>
+          </>
+        ) : (
+          <span className="buybox-current-price">{price}</span>
+        )}
       </div>
+      <p>Descrição do produto</p>
+      <p className="buybox-product-description">{description}</p>
 
-      <div>
-        <p>Descrição do produto</p>
-        <p className="product-description">{description}</p>
-      </div>
+      {children}
 
-      <div className="size-selection">
-        <h4>Tamanho</h4>
-        <div className="size-options">
-          {sizeOptions.map((size) => (
-            <button key={size} className="size-option">
-              {size}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="color-selection">
-        <h4>Cor</h4>
-        <div className="color-options">
-          {colorOptions.map((color, index) => (
-            <span
-              key={index}
-              className="color-circle"
-              style={{ backgroundColor: color }}
-            ></span>
-          ))}
-        </div>
-      </div>
-
-      <button className="buy-button" onClick={onBuyClick}>
+      <button className="buybox-buy-button" onClick={handleBuyClick}>
         COMPRAR
       </button>
     </div>

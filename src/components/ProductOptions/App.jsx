@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import "./style.css";
 
-export default function ProductOptions({
-  options,
-  radius,
-  shape,
-  type,
-}) {
-  // Estado para armazenar a opção selecionada
+export default function ProductOptions({ options, radius, shape, type }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // Função para lidar com a seleção de uma opção
   const handleSelect = (option) => {
     setSelectedOption(option);
   };
 
-  // Estilos dinâmicos com base nas propriedades
   const getOptionStyle = (option) => {
     const isSelected = option === selectedOption;
     const baseStyle = {
@@ -29,11 +21,11 @@ export default function ProductOptions({
     if (shape === "square") {
       return {
         ...baseStyle,
-        width: "46px",
-        height: "46px",
+        width: "36px",
+        height: "36px",
         borderRadius: radius || "5px",
         backgroundColor: type === "color" ? option : "transparent",
-        fontSize: type === "text" ? "24px" : "initial",
+        fontSize: type === "text" ? "16px" : "initial",
         color: type === "text" ? "var(--cor-dark-gray-2)" : "transparent",
         border: isSelected ? "2px solid var(--cor-primary)" : baseStyle.border,
       };
@@ -44,7 +36,7 @@ export default function ProductOptions({
         height: "31px",
         borderRadius: "50%",
         backgroundColor: type === "color" ? option : "transparent",
-        fontSize: type === "text" ? "24px" : "initial",
+        fontSize: type === "text" ? "16px" : "initial",
         color: type === "text" ? "var(--cor-dark-gray-2)" : "transparent",
         border: isSelected ? "2px solid var(--cor-primary)" : baseStyle.border,
       };
@@ -52,17 +44,20 @@ export default function ProductOptions({
   };
 
   return (
-    <div className="product-options">
-      {options.map((option, index) => (
-        <div
-          key={index}
-          className="option-item"
-          style={getOptionStyle(option)}
-          onClick={() => handleSelect(option)}
-        >
-          {type === "text" ? option : ""}
-        </div>
-      ))}
-    </div>
+    <>
+      <p className="tamanhop">Tamanho</p>
+      <div className="product-options">
+        {options.map((option, index) => (
+          <div
+            key={index}
+            className="option-item"
+            style={getOptionStyle(option)}
+            onClick={() => handleSelect(option)}
+          >
+            {type === "text" ? option : ""}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

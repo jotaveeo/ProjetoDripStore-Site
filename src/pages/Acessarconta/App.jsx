@@ -1,10 +1,8 @@
-// import ProductListing from "../../components/ProductListing/App";
-// import Gallery from "../../components/Gallery/app";
-// import Section from "../../components/Section/App";
-// import Layout from "../../components/Layout/App";
 import Facebook from "../../assets/svgs/facebook-circle.svg";
 import Gmail from "../../assets/svgs/gmail.svg";
 import ImgCad from "../../assets/svgs/imgcad.svg";
+import Footer from "../../components/Footer/App";
+
 import "./style.css";
 
 export default function Acessarconta() {
@@ -15,7 +13,7 @@ export default function Acessarconta() {
           <form className="form">
             <h1>Acesse sua conta</h1>
             <p>
-              Novo cliente? Então registre-se <a href="/register">aqui</a>.
+              Novo cliente? Então registre-se <a href="/cadastro">aqui</a>.
             </p>
             <label htmlFor="login">Login *</label>
             <input
@@ -36,10 +34,14 @@ export default function Acessarconta() {
             <a href="/forgot-password" className="forgot-password">
               Esqueci minha senha
             </a>
-            <button>Acessar a Conta</button>
+            <button type="submit">Acessar a Conta</button>
             <div className="login-rede-sociais">
               <span>Ou faça login com</span>
-              <img src={Facebook} alt="Icone Facebook" className="social-icon" />
+              <img
+                src={Facebook}
+                alt="Icone Facebook"
+                className="social-icon"
+              />
               <img src={Gmail} alt="Icone Gmail" className="social-icon" />
             </div>
           </form>
@@ -48,8 +50,7 @@ export default function Acessarconta() {
           <img src={ImgCad} alt="Imagem Página de Cadastro" />
         </div>
       </section>
-
-      {/* <Layout /> */}
+      <Footer />
     </>
   );
 }

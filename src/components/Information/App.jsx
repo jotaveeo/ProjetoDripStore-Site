@@ -1,3 +1,6 @@
+import React from "react";
+import "./style.css";
+
 export default function Information({ title, informations }) {
   return (
     <div className="footer-information">

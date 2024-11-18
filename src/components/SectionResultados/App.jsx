@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 
-// img src={img}
 export default function SectionResultados({
   title = 'Resultados para "Tênis" - 15 produtos',
 }) {

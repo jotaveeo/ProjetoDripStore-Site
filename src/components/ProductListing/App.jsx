@@ -1,20 +1,21 @@
+import React from "react";
 import "./style.css";
 import ProductCard from "../../components/ProductCard/App";
-import img from "../../assets/tenis.png";
 
-const product = {
-  img: img,
-  descontooff: "30% OFF",
-  title: "Tênis",
-  nomeproduto: "K-Swiss V8 - Masculino",
-  preco: "$200",
-  precodesconto: "$100",
-};
-
-export default function ProductListing() {
+export default function ProductListing({
+  products,
+  columns = 4,
+  rows = "auto",
+}) {
   return (
-    <div className="productListing">
-      {[...Array(8)].map((_, index) => (
+    <div
+      className="product-listing"
+      style={{
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, auto)`,
+      }}
+    >
+      {products.map((product, index) => (
         <ProductCard
           key={index}
           img={product.img}

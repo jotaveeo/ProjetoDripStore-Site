@@ -1,5 +1,5 @@
+import React from "react";
 import Logo from "../Logofooter/App";
-import Information from "../Information/App";
 import facebookLogo from "../../assets/svgs/facebook.svg";
 import instagramLogo from "../../assets/svgs/instagram.svg";
 import twitterLogo from "../../assets/svgs/twitter.svg";
@@ -21,8 +21,11 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-logo">
         <Logo />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        <div className="redesLogo">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+          odio. Praesent libero. Sed cursus ante dapibus diam.
+        </p>
+        <div className="footer-social">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <img src={facebookLogo} alt="Logo Facebook" />
           </a>
@@ -57,11 +60,13 @@ export default function Footer() {
 
       <div className="footer-contact">
         <h3>Contato</h3>
-        <p>Av. Santos Dumont, 1510 - 1 andar - Aldeota, Fortaleza - CE, 60150-161</p>
+        <p>
+          Av. Santos Dumont, 1510 - 1 andar - Aldeota, Fortaleza - CE, 60150-161
+        </p>
         <p>(85) 3051-3411</p>
       </div>
 
-      <div className="digcoll">
+      <div className="footer-bottom">
         <hr />
         <p>© 2024 Digital Store</p>
       </div>

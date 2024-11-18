@@ -22,6 +22,7 @@ body {
   --cor-error: #ee4266;
   --cor-sucess: #52ca76;
   --cor-warning: #f6aa1c;
+  --cor-warning-dark: #cb8c18;
   /* Escala de cinza */
   --cor-dark-gray: #1f1f1f;
   --cor-dark-gray-2: #474747;
@@ -32,7 +33,7 @@ body {
   --cor-white: #ffffff;
 }
 
-.collections {
+/* .collections {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -42,4 +43,4 @@ body {
   width: 292px;
   height: auto;
   border-radius: 4px;
-}
+} */
