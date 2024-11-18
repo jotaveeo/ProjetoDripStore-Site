@@ -14,7 +14,7 @@ const prisma = new PrismaClient();
 
 const read = await prisma.user.findUnique({
   where: {
-    email: "joao@gmail.com",
+    email: "levy@gmail.com",
   },
 });
 
