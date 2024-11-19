@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function MinhasInformacoes() {
@@ -7,7 +7,11 @@ export default function MinhasInformacoes() {
       <div className="minhas-informacoes-nav">
         <p>Meu Perfil</p>
         <hr />
-        <p>Meus Pedidos</p>
+        <p>
+          <Link to="/meuspedidospage" className="link">
+            Meus Pedidos
+          </Link>
+        </p>
         <hr />
         <p>Minhas Informações</p>
         <hr />
@@ -54,9 +58,7 @@ export default function MinhasInformacoes() {
 
         <div className="minhas-informacoes-entrega">
           <div className="minhas-informacoes-title">
-            <div>
-              <h2>Informações de Entrega</h2>
-            </div>
+            <h2>Informações de Entrega</h2>
           </div>
           <div className="minhas-informacoes-item">
             <p>Endereço:</p>

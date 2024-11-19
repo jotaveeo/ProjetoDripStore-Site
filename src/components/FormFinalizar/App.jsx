@@ -31,21 +31,21 @@ export default function FormFinalizar() {
             htmlFor="email"
             text="E-mail *"
             id="email"
-            type="text"
+            type="email"
             placeholder="Insira seu e-mail"
           />
           <Input
             htmlFor="cpf"
             text="CPF *"
             id="cpf"
-            type="text"
+            type="number"
             placeholder="Insira seu CPF"
           />
           <Input
             htmlFor="celular"
             text="Celular *"
             id="celular"
-            type="text"
+            type="number"
             placeholder="Insira seu celular"
           />
 
@@ -76,7 +76,7 @@ export default function FormFinalizar() {
             htmlFor="cep"
             text="CEP *"
             id="cep"
-            type="text"
+            type="number"
             placeholder="Insira seu CEP"
           />
           <Input
@@ -93,21 +93,21 @@ export default function FormFinalizar() {
             htmlFor="cartao"
             text="Número do Cartão *"
             id="cartao"
-            type="text"
+            type="number"
             placeholder="Insira o número do cartão"
           />
           <Input
             htmlFor="validade"
             text="Validade *"
             id="validade"
-            type="text"
+            type="number"
             placeholder="MM/AA"
           />
           <Input
             htmlFor="cvv"
             text="CVV *"
             id="cvv"
-            type="text"
+            type="number"
             placeholder="Insira o CVV"
           />
           <Input

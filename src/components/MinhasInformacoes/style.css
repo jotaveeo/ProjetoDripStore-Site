@@ -17,12 +17,6 @@
   --cor-white: #ffffff;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin-top: 1.5%;
-}
-
 .minhas-informacoes-container {
   display: flex;
   margin: 40px;
@@ -163,4 +157,13 @@ hr {
   line-height: 22px;
   letter-spacing: 0.25;
   align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--cor-dark-gray-2);
+}
+
+.link:hover {
+  text-decoration: underline;
 }

@@ -6,9 +6,11 @@ import "./style.css";
 
 export default function Cadastro() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
+    senha: "",
     cpf: "",
     celular: "",
     endereco: "",
@@ -28,27 +30,33 @@ export default function Cadastro() {
       ...prevData,
       [id]: value,
     }));
-  };
+  };  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5173/cadastro", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://673c074496b8dcd5f3f843ba.mockapi.io/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData), // Certifique-se que está enviando "formData" corretamente
+        }
+      );
       if (response.ok) {
-        navigate("/finalizarcompra"); // Redireciona para a página finalizar compra
+        console.log("Usuário criado com sucesso!");
+        navigate("/finalizarcompra");
       } else {
-        console.error("Erro ao enviar os dados");
+        console.error("Erro ao criar o usuário");
       }
     } catch (error) {
-      console.error("Erro ao enviar os dados", error);
+      console.error("Erro ao criar o usuário", error);
     }
   };
+
+  console.log(formData);
 
   return (
     <>
@@ -74,9 +82,18 @@ export default function Cadastro() {
               htmlFor="email"
               text="E-mail *"
               id="email"
-              type="text"
+              type="email"
               placeholder="Insira seu e-mail"
               value={formData.email}
+              onChange={handleChange}
+            />
+            <Input
+              htmlFor="senha"
+              text="Senha *"
+              id="senha"
+              type="password"
+              placeholder="Insira sua senha"
+              value={formData.senha}
               onChange={handleChange}
             />
             <Input
@@ -164,3 +181,4 @@ export default function Cadastro() {
     </>
   );
 }
+
