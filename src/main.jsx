@@ -14,7 +14,7 @@ import Finalizarcompra from "./pages/Finalizarcompra/App.jsx";
 import Meuspedidos from "./pages/Meuspedidos/App.jsx";
 import MeusPedidosPage from "./pages/MeusPedidosPage/App.jsx";
 import MinhasInformacoesPage from "./pages/MinhasInformacoesPage/App.jsx";
-
+import CategoriasPage from "./pages/CategoriasPage/App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -41,6 +41,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/meuspedidospage" element={<MeusPedidosPage />} />
 
         <Route path="/minhasinformacoes" element={<MinhasInformacoesPage />} />
+
+        <Route path="/categorias" component={<CategoriasPage/>} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
