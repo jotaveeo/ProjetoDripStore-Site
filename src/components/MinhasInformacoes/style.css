@@ -1,5 +1,4 @@
 :root {
-  /* Escala de cores coloridas */
   --cor-primary: #c92071;
   --cor-secondary: #b5b6f2;
   --cor-tertiary: #991956;
@@ -7,7 +6,6 @@
   --cor-sucess: #52ca76;
   --cor-warning: #f6aa1c;
   --cor-warning-dark: #cb8c18;
-  /* Escala de cinza */
   --cor-dark-gray: #1f1f1f;
   --cor-dark-gray-2: #474747;
   --cor-dark-gray-3: #666666;
@@ -22,21 +20,6 @@
   margin: 40px;
   gap: 20px;
   padding: 0 16rem 0 16rem;
-}
-
-.minhas-informacoes-container hr {
-  width: 830px;
-}
-
-.minhas-informacoes-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
-
-.minhas-informacoes-header p {
-  font-weight: 700;
-  letter-spacing: 0.75px;
 }
 
 .minhas-informacoes-nav {
@@ -56,13 +39,11 @@
   letter-spacing: 0.25px;
 }
 
-/* Minhas Informações */
 .minhas-informacoes-nav p:nth-child(5) {
   font-weight: 700;
   color: var(--cor-primary);
 }
 
-/* Meu Perfil */
 .minhas-informacoes-nav p:nth-child(1) {
   font-weight: 700;
 }
@@ -73,11 +54,21 @@
 
 .minhas-informacoes-content {
   width: 890px;
-  max-height: 466px;
   background-color: var(--cor-white);
   padding: 30px;
   border-radius: 4px;
   gap: 20px;
+}
+
+.minhas-informacoes-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.minhas-informacoes-header p {
+  font-weight: 700;
+  letter-spacing: 0.75px;
 }
 
 .minhas-informacoes-title {
@@ -105,37 +96,9 @@ hr {
   font-size: 14px;
 }
 
-.minhas-informacoes-pessoais {
-  font-size: 14px;
-  width: 778px;
-  height: 152px;
-  gap: 10px;
-}
-
-.minhas-informacoes-title {
-  width: 778px;
-  height: 24px;
-  gap: 365px;
-}
-
-.minhas-informacoes-title h2 {
-  line-height: 24px;
-  font-weight: 700;
-  letter-spacing: 0.75px;
-  align-items: center;
-}
-
+.minhas-informacoes-pessoais,
 .minhas-informacoes-entrega {
-  width: 778px;
-  height: 152px;
-  gap: 10px;
-}
-
-.minhas-informacoes-entrega h2 {
-  line-height: 24px;
-  font-weight: 700;
-  letter-spacing: 0.75px;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
 .minhas-informacoes-item {
