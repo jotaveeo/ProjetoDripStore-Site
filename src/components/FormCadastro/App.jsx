@@ -10,7 +10,7 @@ export default function Cadastro() {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
-    senha: "",
+    password: "",
     cpf: "",
     celular: "",
     endereco: "",
@@ -35,19 +35,16 @@ export default function Cadastro() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(
-        "https://673cb70796b8dcd5f3fb3aba.mockapi.io/users",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData), // Certifique-se que está enviando "formData" corretamente
-        }
-      );
+      const response = await fetch("http://localhost:3000/api/user/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // Certifique-se que está enviando "formData" corretamente
+      });
       if (response.ok) {
         console.log("Usuário criado com sucesso!");
-        navigate("/");
+        // navigate("/");
         alert("Usuário criado com sucesso!");
       } else {
         console.error("Erro ao criar o usuário");
@@ -88,12 +85,12 @@ export default function Cadastro() {
               onChange={handleChange}
             />
             <Input
-              htmlFor="senha"
+              htmlFor="password"
               text="Senha *"
-              id="senha"
+              id="password"
               type="password"
               placeholder="Insira sua senha"
-              value={formData.senha}
+              value={formData.password}
               onChange={handleChange}
             />
             <Input
