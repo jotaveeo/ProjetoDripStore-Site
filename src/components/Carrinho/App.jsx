@@ -18,17 +18,16 @@ export default function Carrinho() {
     },
   ];
 
-  const products = [...Array(4)].map((_, index) => ({
-    img: img,
-    descontooff: "30% OFF",
-    title: "Tênis",
-    nomeproduto: "K-Swiss V8 - Masculino",
-    preco: "$200",
-    precodesconto: "$100",
-  }));
-
   const handleContinueClick = () => {
-    navigate("/cadastro");
+    // Verifica se o usuário está logado
+    const userName = localStorage.getItem("login");
+    if (userName) {
+      // Se estiver logado, redireciona para a página de finalizar compra
+      navigate("/finalizarcompra");
+    } else {
+      // Se não estiver logado, redireciona para a página de cadastro
+      navigate("/cadastro");
+    }
   };
 
   return (
@@ -81,11 +80,7 @@ export default function Carrinho() {
         <button className="yellow-button" onClick={handleContinueClick}>
           Continuar
         </button>
-
       </div>
     </div>
   );
-  <Section title="Produtos relacionados">
-  <ProductListing products={products} columns={4} rows={5} />
-</Section>
 }

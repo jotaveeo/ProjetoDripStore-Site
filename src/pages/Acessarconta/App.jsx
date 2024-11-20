@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Facebook from "../../assets/svgs/facebook-circle.svg";
 import Gmail from "../../assets/svgs/gmail.svg";
@@ -15,6 +15,10 @@ export default function Acessarconta() {
     password: "",
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Rola até o topo da página quando o componente é montado
+  }, []);
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -25,19 +29,23 @@ export default function Acessarconta() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch("http://localhost:3000/api/user/login", {
-        method: "POST", // Use POST para enviar dados de login
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         const data = await response.json();
-        console.log("Login bem-sucedido!", data);
+  
+        // Armazena login (email ou username) e senha no localStorage
+        localStorage.setItem("login", formData.login); // Salva o e-mail/login
+        localStorage.setItem("senha", formData.password); // Salva a senha (temporário)
+  
         alert("Login bem-sucedido!");
         navigate("/"); // Redireciona para a página inicial
       } else {
@@ -46,9 +54,10 @@ export default function Acessarconta() {
       }
     } catch (error) {
       console.error("Erro ao acessar a conta:", error);
+      alert("Erro ao acessar a conta. Por favor, tente novamente.");
     }
-    console.log(formData);
   };
+  
 
   return (
     <>

@@ -34,25 +34,36 @@ export default function Cadastro() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Conversões necessárias antes do envio
+    const preparedData = {
+      ...formData,
+      cpf: parseInt(formData.cpf.replace(/\D/g, ""), 10), // Remove caracteres não numéricos e converte para número
+      celular: parseInt(formData.celular.replace(/\D/g, ""), 10), // Remove caracteres não numéricos e converte para número
+      cep: parseInt(formData.cep.replace(/\D/g, ""), 10), // 
+    };
+
     try {
       const response = await fetch("http://localhost:3000/api/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData), // Certifique-se que está enviando "formData" corretamente
+        body: JSON.stringify(preparedData),
       });
+
       if (response.ok) {
         console.log("Usuário criado com sucesso!");
-        navigate("/acessarconta"); 
+        navigate("/acessarconta");
         alert("Usuário criado com sucesso!");
       } else {
         console.error("Erro ao criar o usuário");
+        alert("Erro ao criar o usuário. Por favor, tente novamente.");
       }
     } catch (error) {
       console.error("Erro ao criar o usuário", error);
+      alert("Erro ao processar a requisição. Por favor, tente novamente.");
     }
-    console.log(formData);
   };
 
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import carrinho from "../../assets/carrinho.png";
 import Logo from "../Logo/App";
+import UserStatus from "../UserStatus/App";
 import "./style.css";
 
 export default function Busca() {
@@ -22,14 +23,9 @@ export default function Busca() {
           className="busca-search-bar"
         />
 
-        {/* Botões de Cadastro e Entrar */}
+        {/* Usa o componente UserStatus para mostrar o status de login */}
         <div className="busca-auth-links">
-          <a href="/cadastro" className="busca-cadastro">
-            Cadastre-se
-          </a>
-          <a href="/acessarconta" className="busca-button-primary">
-            Entrar
-          </a>
+          <UserStatus />
         </div>
 
         <img
