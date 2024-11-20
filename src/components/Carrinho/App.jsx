@@ -18,6 +18,15 @@ export default function Carrinho() {
     },
   ];
 
+  const products = [...Array(4)].map((_, index) => ({
+    img: img,
+    descontooff: "30% OFF",
+    title: "Tênis",
+    nomeproduto: "K-Swiss V8 - Masculino",
+    preco: "$200",
+    precodesconto: "$100",
+  }));
+
   const handleContinueClick = () => {
     navigate("/cadastro");
   };
@@ -38,7 +47,9 @@ export default function Carrinho() {
               <button className="quantity-btn">-</button>
               <span>{item.quantity}</span>
               <button className="quantity-btn">+</button>
-              <a href="#" className="remove-item">Remover item</a>
+              <a href="#" className="remove-item">
+                Remover item
+              </a>
             </div>
             <div className="item-pricing">
               <p className="old-price">
@@ -70,7 +81,11 @@ export default function Carrinho() {
         <button className="yellow-button" onClick={handleContinueClick}>
           Continuar
         </button>
+
       </div>
     </div>
   );
+  <Section title="Produtos relacionados">
+  <ProductListing products={products} columns={4} rows={5} />
+</Section>
 }

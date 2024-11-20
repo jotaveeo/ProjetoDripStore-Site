@@ -42,7 +42,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/minhasinformacoes" element={<MinhasInformacoesPage />} />
 
-        <Route path="/categorias" component={<CategoriasPage/>} />
+        <Route path="/categorias" element={<CategoriasPage/>} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -30,13 +30,13 @@ export default function Cadastro() {
       ...prevData,
       [id]: value,
     }));
-  };  
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://673c074496b8dcd5f3f843ba.mockapi.io/users",
+        "https://673cb70796b8dcd5f3fb3aba.mockapi.io/users",
         {
           method: "POST",
           headers: {
@@ -47,16 +47,16 @@ export default function Cadastro() {
       );
       if (response.ok) {
         console.log("Usuário criado com sucesso!");
-        navigate("/finalizarcompra");
+        navigate("/");
+        alert("Usuário criado com sucesso!");
       } else {
         console.error("Erro ao criar o usuário");
       }
     } catch (error) {
       console.error("Erro ao criar o usuário", error);
     }
+    console.log(formData);
   };
-
-  console.log(formData);
 
   return (
     <>
@@ -181,4 +181,3 @@ export default function Cadastro() {
     </>
   );
 }
-

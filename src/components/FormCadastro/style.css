@@ -98,8 +98,8 @@
 }
 
 .margin-cadastro {
-  margin-top: 60px;
-  background-color: var(--cor-light-gray-3);
+  margin-top: 80px;
+  /* background-color: var(--cor-light-gray-3); */
 }
 
 .top-cadastro {
