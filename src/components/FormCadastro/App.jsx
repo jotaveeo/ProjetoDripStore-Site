@@ -44,7 +44,7 @@ export default function Cadastro() {
       });
       if (response.ok) {
         console.log("Usuário criado com sucesso!");
-        // navigate("/");
+        navigate("/acessarconta"); 
         alert("Usuário criado com sucesso!");
       } else {
         console.error("Erro ao criar o usuário");

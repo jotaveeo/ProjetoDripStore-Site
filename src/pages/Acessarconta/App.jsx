@@ -11,8 +11,8 @@ export default function Acessarconta() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    email: "",
-    senha: "",
+    login: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -27,30 +27,27 @@ export default function Acessarconta() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "https://673cb70796b8dcd5f3fb3aba.mockapi.io/login",
-        {
-          method: "GET", // MockAPI usa GET para recuperar dados
-        }
-      );
-      const users = await response.json();
+      const response = await fetch("http://localhost:3000/api/user/login", {
+        method: "POST", // Use POST para enviar dados de login
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Validação simples: verifica se o login e a senha correspondem a algum usuário
-      const user = users.find(
-        (user) =>
-          (user.email === formData.login || user.nome === formData.login) &&
-          user.senha === formData.password
-      );
-
-      if (user) {
-        console.log("Login bem-sucedido!", user);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login bem-sucedido!", data);
+        alert("Login bem-sucedido!");
         navigate("/"); // Redireciona para a página inicial
       } else {
-        alert("Login ou senha inválidos!");
+        const errorData = await response.json();
+        alert(errorData.error || "Erro ao acessar a conta");
       }
     } catch (error) {
       console.error("Erro ao acessar a conta:", error);
     }
+    console.log(formData);
   };
 
   return (
