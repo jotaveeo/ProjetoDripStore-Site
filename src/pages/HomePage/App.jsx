@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductListing from "../../components/ProductListing/App";
 import Layout from "../../components/Layout/App";
 import Gallery from "../../components/Gallery/app";
@@ -18,6 +18,15 @@ const products = [...Array(8)].map((_, index) => ({
 }));
 
 export default function HomePage() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/product/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+
   return (
     <Layout>
       <Gallery />

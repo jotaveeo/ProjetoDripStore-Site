@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./style.css";
 
 export default function ProductCard({
@@ -11,7 +12,9 @@ export default function ProductCard({
   return (
     <article className="product-card">
       <figure className="product-card-img-container">
-        <img src={img} alt={nomeProduto} className="product-card-img" />
+        <NavLink to="/produtos/detalhes">
+          <img src={img} alt={nomeProduto} className="product-card-img" />
+        </NavLink>
         {descontooff && (
           <div className="product-card-off">
             <p>{descontooff}</p>
@@ -22,8 +25,14 @@ export default function ProductCard({
         <h4>{title}</h4>
         <h5>{nomeProduto}</h5>
         <div className="product-card-price">
-          <p className={`product-card-preco ${precoDesconto ? "desconto" : ""}`}>{preco}</p>
-          {precoDesconto && <p className="product-card-preco-desconto">{precoDesconto}</p>}
+          <p
+            className={`product-card-preco ${precoDesconto ? "desconto" : ""}`}
+          >
+            {preco}
+          </p>
+          {precoDesconto && (
+            <p className="product-card-preco-desconto">{precoDesconto}</p>
+          )}
         </div>
       </section>
     </article>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductListing from "../../components/ProductListing/App";
 import GalleryProduct from "../../components/GalleryProduct/app";
 import Layout from "../../components/Layout/App";
@@ -19,6 +19,10 @@ const products = [...Array(4)].map((_, index) => ({
 }));
 
 export default function ProductViewPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Layout>
       <div className="product-view-container">
@@ -32,7 +36,7 @@ export default function ProductViewPage() {
           priceDiscount="R$ 249,99"
           description="Tênis confortável para a prática de esportes."
         >
-          <ProductOptions 
+          <ProductOptions
             options={["37", "38", "39", "40", "41"]}
             radius="5px"
             shape="square"
