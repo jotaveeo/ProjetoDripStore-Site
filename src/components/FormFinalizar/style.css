@@ -92,3 +92,10 @@
 .form-finalizar-container {
   margin-top: 100px;
 }
+
+/* Remove os controles de incremento e decremento dos campos de entrada do tipo number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -20,18 +20,17 @@
 .input-finalizar-campo {
   display: flex;
   flex-direction: column;
-  /* margin-bottom: 40px; */
   width: 900px;
 }
-/* 
-.input-finalizar-campo{
-
-} */
 
 .input-finalizar-info {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
+  background-color: rgba(219, 219, 219, 0.411);
+  border: 0;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .input-finalizar-info label {
@@ -48,4 +47,12 @@
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   margin-top: 0.5rem;
+}
+
+.input-finalizar-campo label {
+  font-family: "Inter", sans-serif;
+  color: var(--cor-dark-gray-2);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }

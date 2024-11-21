@@ -1,15 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/InputFinalizar/App";
 import "./style.css";
 
 export default function FormFinalizar() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    cartao: "",
+    validade: "",
+    cvv: "",
+    nomeCartao: "",
+  });
 
-  const handleSubmit = (event) => {
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Lógica para finalizar a compra
-    navigate("/comprafinalizada"); // Redireciona para a página de compra finalizada
+
+    try {
+      const response = await fetch("http://localhost:3000/api/compra/finalizar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Compra finalizada com sucesso!");
+        navigate("/comprafinalizada"); // Redireciona para a página de compra finalizada
+      } else {
+        const errorData = await response.json();
+        alert(errorData.error || "Erro ao finalizar a compra");
+      }
+    } catch (error) {
+      console.error("Erro ao finalizar a compra:", error);
+      alert("Erro ao finalizar a compra. Por favor, tente novamente.");
+    }
+    console.log(formData);
   };
 
   return (
@@ -17,75 +51,6 @@ export default function FormFinalizar() {
       <form className="form-finalizar" onSubmit={handleSubmit}>
         <div className="form-content">
           <h1>Finalizar Compra</h1>
-
-          <h2>Informações Pessoais</h2>
-          <hr />
-          <Input
-            htmlFor="nome"
-            text="Nome completo *"
-            id="nome"
-            type="text"
-            placeholder="Insira seu nome"
-          />
-          <Input
-            htmlFor="email"
-            text="E-mail *"
-            id="email"
-            type="email"
-            placeholder="Insira seu e-mail"
-          />
-          <Input
-            htmlFor="cpf"
-            text="CPF *"
-            id="cpf"
-            type="number"
-            placeholder="Insira seu CPF"
-          />
-          <Input
-            htmlFor="celular"
-            text="Celular *"
-            id="celular"
-            type="number"
-            placeholder="Insira seu celular"
-          />
-
-          <h2>Informações de Entrega</h2>
-          <hr />
-          <Input
-            htmlFor="endereco"
-            text="Endereço *"
-            id="endereco"
-            type="text"
-            placeholder="Insira seu endereço"
-          />
-          <Input
-            htmlFor="bairro"
-            text="Bairro *"
-            id="bairro"
-            type="text"
-            placeholder="Insira seu bairro"
-          />
-          <Input
-            htmlFor="cidade"
-            text="Cidade *"
-            id="cidade"
-            type="text"
-            placeholder="Insira sua cidade"
-          />
-          <Input
-            htmlFor="cep"
-            text="CEP *"
-            id="cep"
-            type="number"
-            placeholder="Insira seu CEP"
-          />
-          <Input
-            htmlFor="complemento"
-            text="Complemento"
-            id="complemento"
-            type="text"
-            placeholder="Insira seu complemento"
-          />
 
           <h2>Informações de Pagamento</h2>
           <hr />
@@ -95,6 +60,9 @@ export default function FormFinalizar() {
             id="cartao"
             type="number"
             placeholder="Insira o número do cartão"
+            value={formData.cartao}
+            onChange={handleChange}
+            required
           />
           <Input
             htmlFor="validade"
@@ -102,6 +70,9 @@ export default function FormFinalizar() {
             id="validade"
             type="number"
             placeholder="MM/AA"
+            value={formData.validade}
+            onChange={handleChange}
+            required
           />
           <Input
             htmlFor="cvv"
@@ -109,6 +80,9 @@ export default function FormFinalizar() {
             id="cvv"
             type="number"
             placeholder="Insira o CVV"
+            value={formData.cvv}
+            onChange={handleChange}
+            required
           />
           <Input
             htmlFor="nomeCartao"
@@ -116,6 +90,9 @@ export default function FormFinalizar() {
             id="nomeCartao"
             type="text"
             placeholder="Insira o nome como está no cartão"
+            value={formData.nomeCartao}
+            onChange={handleChange}
+            required
           />
 
           <div className="button-finalizar">
