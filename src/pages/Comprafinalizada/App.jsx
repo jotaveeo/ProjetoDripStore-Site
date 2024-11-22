@@ -22,8 +22,14 @@ export default function Comprafinalizada() {
   useEffect(() => {
     // Função para buscar os dados do usuário do backend
     const fetchUserInfo = async () => {
+      const userId = localStorage.getItem("userId"); // Obtém o ID do usuário do localStorage
+      if (!userId) {
+        console.error("ID do usuário não encontrado no localStorage");
+        return;
+      }
+
       try {
-        const response = await fetch("http://localhost:3000/api/user/1");
+        const response = await fetch(`http://localhost:3000/api/user/${userId}`);
         const data = await response.json();
 
         setUserInfo({
