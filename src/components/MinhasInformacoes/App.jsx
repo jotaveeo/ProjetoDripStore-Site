@@ -1,7 +1,46 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function MinhasInformacoes() {
+  const [userInfo, setUserInfo] = useState({
+    nome: "",
+    cpf: "",
+    email: "",
+    celular: "",
+    endereco: "",
+    bairro: "",
+    cidade: "",
+    cep: "",
+    complemento: "",
+  });
+
+  useEffect(() => {
+    // Função para buscar os dados do usuário do backend
+    const fetchUserInfo = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/user/:id");
+        const data = await response.json();
+
+        setUserInfo({
+          nome: data.nome,
+          cpf: data.cpf,
+          email: data.email,
+          celular: data.celular,
+          endereco: data.endereco,
+          bairro: data.bairro,
+          cidade: data.cidade,
+          cep: data.cep,
+          complemento: data.complemento,
+        });
+      } catch (error) {
+        console.error("Erro ao buscar os dados do usuário:", error);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
   return (
     <div className="minhas-informacoes-container">
       <div className="minhas-informacoes-nav">
@@ -38,19 +77,19 @@ export default function MinhasInformacoes() {
           </div>
           <div className="minhas-informacoes-item">
             <p>Nome:</p>
-            <p>Francisco Antonio Pereira</p>
+            <p>{userInfo.nome}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>CPF:</p>
-            <p>123485913-35</p>
+            <p>{userInfo.cpf}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>Email:</p>
-            <p>francisco@gmail.com</p>
+            <p>{userInfo.email}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>Celular:</p>
-            <p>(85) 5555-5555</p>
+            <p>{userInfo.celular}</p>
           </div>
         </div>
 
@@ -62,20 +101,26 @@ export default function MinhasInformacoes() {
           </div>
           <div className="minhas-informacoes-item">
             <p>Endereço:</p>
-            <p>Rua João Pessoa, 333</p>
+            <p>{userInfo.endereco}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>Bairro:</p>
-            <p>Centro</p>
+            <p>{userInfo.bairro}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>Cidade:</p>
-            <p>Fortaleza, Ceará</p>
+            <p>{userInfo.cidade}</p>
           </div>
           <div className="minhas-informacoes-item">
             <p>CEP:</p>
-            <p>433-8800</p>
+            <p>{userInfo.cep}</p>
           </div>
+          {userInfo.complemento && (
+            <div className="minhas-informacoes-item">
+              <p>Complemento:</p>
+              <p>{userInfo.complemento}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

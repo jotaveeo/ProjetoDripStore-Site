@@ -7,28 +7,42 @@ import "./style.css";
 export default function Comprafinalizada() {
   const navigate = useNavigate();
 
-  const [personalInfo, setPersonalInfo] = useState({});
-  const [deliveryInfo, setDeliveryInfo] = useState({});
-  const [paymentInfo, setPaymentInfo] = useState({});
-  const [purchaseSummary, setPurchaseSummary] = useState([]);
+  const [userInfo, setUserInfo] = useState({
+    nome: "",
+    cpf: "",
+    email: "",
+    celular: "",
+    endereco: "",
+    bairro: "",
+    cidade: "",
+    cep: "",
+    complemento: "",
+  });
 
   useEffect(() => {
-    // Função para buscar os dados do backend
-    const fetchData = async () => {
+    // Função para buscar os dados do usuário do backend
+    const fetchUserInfo = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/purchase/details");
+        const response = await fetch("http://localhost:3000/api/user/1");
         const data = await response.json();
 
-        setPersonalInfo(data.personalInfo);
-        setDeliveryInfo(data.deliveryInfo);
-        setPaymentInfo(data.paymentInfo);
-        setPurchaseSummary(data.purchaseSummary);
+        setUserInfo({
+          nome: data.nome,
+          cpf: data.cpf,
+          email: data.email,
+          celular: data.celular,
+          endereco: data.endereco,
+          bairro: data.bairro,
+          cidade: data.cidade,
+          cep: data.cep,
+          complemento: data.complemento,
+        });
       } catch (error) {
-        console.error("Erro ao buscar os dados da compra:", error);
+        console.error("Erro ao buscar os dados do usuário:", error);
       }
     };
 
-    fetchData();
+    fetchUserInfo();
   }, []);
 
   const handleHomeClick = () => {
@@ -51,16 +65,16 @@ export default function Comprafinalizada() {
               </h3>
               <div className="compra-concluida-info-group">
                 <p>
-                  <strong>Nome:</strong> {personalInfo.name}
+                  <strong>Nome:</strong> {userInfo.nome}
                 </p>
                 <p>
-                  <strong>CPF:</strong> {personalInfo.cpf}
+                  <strong>CPF:</strong> {userInfo.cpf}
                 </p>
                 <p>
-                  <strong>Email:</strong> {personalInfo.email}
+                  <strong>Email:</strong> {userInfo.email}
                 </p>
                 <p>
-                  <strong>Celular:</strong> {personalInfo.phone}
+                  <strong>Celular:</strong> {userInfo.celular}
                 </p>
               </div>
             </section>
@@ -72,32 +86,22 @@ export default function Comprafinalizada() {
               </h3>
               <div className="compra-concluida-info-group">
                 <p>
-                  <strong>Endereço:</strong> {deliveryInfo.address}
+                  <strong>Endereço:</strong> {userInfo.endereco}
                 </p>
                 <p>
-                  <strong>Bairro:</strong> {deliveryInfo.district}
+                  <strong>Bairro:</strong> {userInfo.bairro}
                 </p>
                 <p>
-                  <strong>Cidade:</strong> {deliveryInfo.city}
+                  <strong>Cidade:</strong> {userInfo.cidade}
                 </p>
                 <p>
-                  <strong>CEP:</strong> {deliveryInfo.postalCode}
+                  <strong>CEP:</strong> {userInfo.cep}
                 </p>
-              </div>
-            </section>
-
-            {/* Informações de Pagamento */}
-            <section className="compra-concluida-section">
-              <h3 className="compra-concluida-section-title">
-                Informações de Pagamento
-              </h3>
-              <div className="compra-concluida-info-group">
-                <p>
-                  <strong>Titular do Cartão:</strong> {paymentInfo.cardHolder}
-                </p>
-                <p>
-                  <strong>Final:</strong> **** **** **** {paymentInfo.cardLastDigits}
-                </p>
+                {userInfo.complemento && (
+                  <p>
+                    <strong>Complemento:</strong> {userInfo.complemento}
+                  </p>
+                )}
               </div>
             </section>
 
@@ -106,21 +110,19 @@ export default function Comprafinalizada() {
               <h3 className="compra-concluida-section-title">
                 Resumo da Compra
               </h3>
-              {purchaseSummary.map((item, index) => (
-                <div className="compra-concluida-product-item" key={index}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="compra-concluida-product-image"
-                  />
-                  <div>
-                    <p>{item.name}</p>
-                    <p>
-                      <strong>Total:</strong> R$ {item.price}
-                    </p>
-                  </div>
+              <div className="compra-concluida-product-item">
+                <img
+                  src={img}
+                  alt="Tênis"
+                  className="compra-concluida-product-image"
+                />
+                <div>
+                  <p>Tênis de Corrida</p>
+                  <p>
+                    <strong>Total:</strong> R$ 299,99
+                  </p>
                 </div>
-              ))}
+              </div>
             </section>
 
             {/* Botão Imprimir Recibo */}
