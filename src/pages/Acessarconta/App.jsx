@@ -29,7 +29,7 @@ export default function Acessarconta() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch("http://localhost:3000/api/user/login", {
         method: "POST",
@@ -38,14 +38,15 @@ export default function Acessarconta() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
-  
-        // Armazena login (email ou username) e senha no localStorage
+
+        // Armazena login (email ou username), token e ID do usuário no localStorage
         localStorage.setItem("login", formData.login); // Salva o e-mail/login
-        localStorage.setItem("token", data.token); // token
-  
+        localStorage.setItem("token", data.token); // Salva o token
+        localStorage.setItem("userId", data.userId); // Salva o ID do usuário
+
         alert("Login bem-sucedido!");
         navigate("/"); // Redireciona para a página inicial
       } else {
