@@ -44,7 +44,7 @@ export default function Acessarconta() {
   
         // Armazena login (email ou username) e senha no localStorage
         localStorage.setItem("login", formData.login); // Salva o e-mail/login
-        localStorage.setItem("senha", formData.password); // Salva a senha (temporário)
+        localStorage.setItem("senha", data.token); // token
   
         alert("Login bem-sucedido!");
         navigate("/"); // Redireciona para a página inicial
