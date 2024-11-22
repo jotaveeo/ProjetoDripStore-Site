@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductListing from "../../components/ProductListing/App";
 import GalleryProduct from "../../components/GalleryProduct/app";
 import Layout from "../../components/Layout/App";
@@ -19,6 +19,15 @@ const products = [...Array(4)].map((_, index) => ({
 }));
 
 export default function ProductViewPage() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/product/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductListing from "../../components/ProductListing/App";
 import GalleryProduct from "../../components/GalleryProduct/app";
 import Layout from "../../components/Layout/App";
@@ -20,6 +20,15 @@ import "./style.css";
 
 import Carrinho from "../../components/Carrinho/App";
 export default function CarrinhoPage() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/product/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+
   return (
     <Layout>
       <Carrinho />

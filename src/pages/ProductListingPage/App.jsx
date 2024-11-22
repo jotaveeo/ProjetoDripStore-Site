@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductListing from "../../components/ProductListing/App";
 import Layout from "../../components/Layout/App";
 import FilterGroup from "../../components/FilterGroup/App";
@@ -16,6 +16,15 @@ const products = [...Array(14)].map((_, index) => ({
 }));
 
 export default function ProductListingPage() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/product/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+
   return (
     <Layout>
       <SectionResultados />

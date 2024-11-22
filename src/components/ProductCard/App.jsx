@@ -28,10 +28,10 @@ export default function ProductCard({
           <p
             className={`product-card-preco ${precoDesconto ? "desconto" : ""}`}
           >
-            {preco}
+            R${preco}
           </p>
           {precoDesconto && (
-            <p className="product-card-preco-desconto">{precoDesconto}</p>
+            <p className="product-card-preco-desconto">R${precoDesconto}</p>
           )}
         </div>
       </section>
