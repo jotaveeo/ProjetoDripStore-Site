@@ -9,24 +9,17 @@ import img from "../../assets/tenis.png";
 
 import "./style.css";
 
-const products = [...Array(4)].map((_, index) => ({
-  img: img,
-  descontooff: "30% OFF",
-  title: "Tênis",
-  nomeproduto: "K-Swiss V8 - Masculino",
-  preco: "$200",
-  precodesconto: "$100",
-}));
-
 export default function ProductViewPage() {
   const [products, setProducts] = useState([]);
+  const [displayCount, setDisplayCount] = useState(4); // Número de produtos a serem exibidos
+
   useEffect(() => {
     fetch("http://localhost:3000/api/product/all")
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        setProducts(data.slice(0, displayCount)); // Exibe apenas a quantidade desejada de produtos
       });
-  }, []);
+  }, [displayCount]);
   
   useEffect(() => {
     window.scrollTo(0, 0);

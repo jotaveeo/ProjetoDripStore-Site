@@ -6,28 +6,21 @@ import Section from "../../components/Section/App";
 import BuyBox from "../../components/BuyBox/App";
 import ProductOptions from "../../components/ProductOptions/App";
 import img from "../../assets/tenis.png";
-
-const products = [...Array(4)].map((_, index) => ({
-  img: img,
-  descontooff: "30% OFF",
-  title: "Tênis",
-  nomeproduto: "K-Swiss V8 - Masculino",
-  preco: "$200",
-  precodesconto: "$100",
-}));
-
 import "./style.css";
-
 import Carrinho from "../../components/Carrinho/App";
+
+
 export default function CarrinhoPage() {
   const [products, setProducts] = useState([]);
+  const [displayCount, setDisplayCount] = useState(4); // Número de produtos a serem exibidos
+
   useEffect(() => {
     fetch("http://localhost:3000/api/product/all")
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        setProducts(data.slice(0, displayCount)); // Exibe apenas a quantidade desejada de produtos
       });
-  }, []);
+  }, [displayCount]);
 
   return (
     <Layout>
